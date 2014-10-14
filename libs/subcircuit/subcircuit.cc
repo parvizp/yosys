@@ -38,18 +38,30 @@ using namespace SubCircuit;
 static std::string my_stringf(const char *fmt, ...)
 {
 	std::string string;
-	char *str = NULL;
+	int ret, strSize = 256;
+	char *str = NULL; 
 	va_list ap;
 
-	va_start(ap, fmt);
-	if (vasprintf(&str, fmt, ap) < 0)
-		str = NULL;
-	va_end(ap);
+	do {
+		delete[] str;
+		str = new char[strSize];
 
-	if (str != NULL) {
-		string = str;
-		free(str);
-	}
+		va_start(ap, fmt);
+		ret = vsprintf(str, fmt, ap);
+		va_end(ap);
+
+		if (ret < 0) {
+			delete[] str;
+			return string;
+		}
+
+		strSize *= 2; // double our buffer
+	} while (ret >= strSize);
+
+	str[ret] = '\0'; // null terminate our string
+	string = str;
+
+	delete[] str;
 
 	return string;
 }
