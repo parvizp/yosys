@@ -1123,7 +1123,7 @@ bool AstNode::simplify(bool const_fold, bool at_zero, bool in_lvalue, int stage,
 			if (left_at_zero_ast->type != AST_CONSTANT || right_at_zero_ast->type != AST_CONSTANT)
 				log_error("Unsupported expression on dynamic range select on signal `%s' at %s:%d!\n",
 						str.c_str(), filename.c_str(), linenum);
-			result_width = abs(left_at_zero_ast->integer - right_at_zero_ast->integer) + 1;
+			result_width = abs(int(left_at_zero_ast->integer - right_at_zero_ast->integer)) + 1;
 		}
 		did_something = true;
 		newNode = new AstNode(AST_CASE, shift_expr);
@@ -2173,8 +2173,9 @@ void AstNode::mem2reg_as_needed_pass1(std::map<AstNode*, std::set<std::string>> 
 	flags &= ~children_flags | backup_flags;
 
 	if (proc_flags_p) {
-		for (auto it : *proc_flags_p)
+		for (auto it : *proc_flags_p) {
 			log_assert((it.second & ~0xff000000) == 0);
+		}
 		delete proc_flags_p;
 	}
 }
