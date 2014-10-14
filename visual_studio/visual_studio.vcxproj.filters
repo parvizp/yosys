@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\backends">
+      <UniqueIdentifier>{3b21952e-fc1c-4834-aff8-229ec0899188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends">
+      <UniqueIdentifier>{4b9dcb61-aeaa-4150-a8b3-1d5b49399cd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernel">
+      <UniqueIdentifier>{55b51af0-0e31-4281-b733-c746bf5ae7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs">
+      <UniqueIdentifier>{815bacdd-f025-4f55-8537-f652cde374e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes">
+      <UniqueIdentifier>{23881761-bb20-4c56-aa9e-2a1bec886e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\blif">
+      <UniqueIdentifier>{545d3376-18f7-4b49-8bfd-25fc81d7babb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\btor">
+      <UniqueIdentifier>{93bd12f1-0ec7-4ac1-bbff-abcb66f182d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\edif">
+      <UniqueIdentifier>{88839738-32a4-4798-9d37-20fc067cc82b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\intersynth">
+      <UniqueIdentifier>{8c409882-f612-43f7-a7de-27eca046468d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\spice">
+      <UniqueIdentifier>{aabb8018-8168-45ce-95ed-348a2371c024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\verilog">
+      <UniqueIdentifier>{30f39175-d2e2-4ecb-b1fc-48f2f14f5044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\ast">
+      <UniqueIdentifier>{b23bbb32-f53c-44a6-94d9-86a6a9f5b957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\ilang">
+      <UniqueIdentifier>{af00bdd7-5757-477f-84a9-e6d933cc621c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\liberty">
+      <UniqueIdentifier>{4f4aa528-4aa7-4509-9d82-d4049ee50069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\verific">
+      <UniqueIdentifier>{399c88c7-dce8-477e-a7b3-8e0fc91d1442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\verilog">
+      <UniqueIdentifier>{5eac8748-ef5d-4c58-852f-cff069de3fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\frontends\vhdl2verilog">
+      <UniqueIdentifier>{7cc5a25f-2b63-41f2-86de-c0744acd1195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\bigint">
+      <UniqueIdentifier>{c88e3c7a-3248-4a41-8007-6359b25ba7d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\ezsat">
+      <UniqueIdentifier>{5041f283-a431-4464-83f5-bae40290943e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\minisat">
+      <UniqueIdentifier>{eeff8288-147e-4f71-bf56-e2f5d1308dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\sha1">
+      <UniqueIdentifier>{8aebc809-1611-402d-b2f5-70413928b73c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\subcircuit">
+      <UniqueIdentifier>{32b9480c-c15a-4afe-85b5-20a43ca86533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\abc">
+      <UniqueIdentifier>{8d311ce8-bbe0-426f-9dfb-2cb15aa866f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\cmds">
+      <UniqueIdentifier>{8685781d-d783-4349-a4dd-a825e487acfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\fsm">
+      <UniqueIdentifier>{c2a62cd6-d2d5-4ab4-baf3-283603f635ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\hierarchy">
+      <UniqueIdentifier>{d3ab371b-b31d-47c3-80e6-128050df4fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\memory">
+      <UniqueIdentifier>{99fa1cfc-f202-4f67-a92b-f6ddeb91c66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\opt">
+      <UniqueIdentifier>{848347db-3c11-48d6-aba6-e456a269e80b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\proc">
+      <UniqueIdentifier>{c921c703-7410-4f3e-b0ea-14c78fd5fe9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\sat">
+      <UniqueIdentifier>{2cf86959-bf3c-420d-93df-ca75b3629e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\techmap">
+      <UniqueIdentifier>{dffabeeb-3ceb-4808-8b05-418c4ba9ab19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kernel">
+      <UniqueIdentifier>{e87a73e0-2a6a-4a8b-b468-3da7f4dd9a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\backends\ilang">
+      <UniqueIdentifier>{68ae7b96-18bd-4de8-81ac-204bd34d82f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\backends">
+      <UniqueIdentifier>{56cd7b33-427f-4fc9-b536-211e6dc8a220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\backends\ilang">
+      <UniqueIdentifier>{b43057ea-def0-4336-a2f6-78f153bb5b56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\frontends">
+      <UniqueIdentifier>{ea6a0a71-eb04-4ad9-89c2-817f60c07a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\frontends\ilang">
+      <UniqueIdentifier>{e0a6286c-196b-4bfc-98df-1648adda4609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\frontends\verilog">
+      <UniqueIdentifier>{299b433b-a83b-4ba2-a64f-bf4f5ed1fd7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs">
+      <UniqueIdentifier>{297b7c7a-aa34-4436-bc5a-17ab072594e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs\bigint">
+      <UniqueIdentifier>{5629be99-523c-4163-80f6-3ed1c896f0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs\ezsat">
+      <UniqueIdentifier>{16b690c7-1a31-4d53-b7aa-d08f103aaeaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs\minisat">
+      <UniqueIdentifier>{618cb992-5da8-496d-a289-1aadcc7dea64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs\sha1">
+      <UniqueIdentifier>{355b5416-44a8-4f4c-aadc-d4dc2fc32ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs\subcircuit">
+      <UniqueIdentifier>{e22d31e2-6aab-442a-a3ed-f06ea40c5b64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\passes">
+      <UniqueIdentifier>{c1288496-e8ad-4b73-8fc6-f2975a932bb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\passes\abc">
+      <UniqueIdentifier>{30d186ef-f00f-4fe2-ab4f-20d2725205a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\passes\fsm">
+      <UniqueIdentifier>{6cb24f6c-0b6f-493a-a578-b3b4f2b304e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\passes\techmap">
+      <UniqueIdentifier>{4a91bd40-bf6f-45fb-8249-d9570664f1b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\passes\tests">
+      <UniqueIdentifier>{de70e2d7-f9bf-4a31-b721-88fffba2b993}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\backends\blif\blif.cc">
+      <Filter>Source Files\backends\blif</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\btor\btor.cc">
+      <Filter>Source Files\backends\btor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\calc.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\driver.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\log.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\register.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\rtlil.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\yosys.cc">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\ast\simplify.cc">
+      <Filter>Source Files\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\ast\ast.cc">
+      <Filter>Source Files\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\ast\dpicall.cc">
+      <Filter>Source Files\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\ast\genrtlil.cc">
+      <Filter>Source Files\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\edif\edif.cc">
+      <Filter>Source Files\backends\edif</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\ilang\ilang_backend.cc">
+      <Filter>Source Files\backends\ilang</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\intersynth\intersynth.cc">
+      <Filter>Source Files\backends\intersynth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\spice\spice.cc">
+      <Filter>Source Files\backends\spice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\verilog\verilog_backend.cc">
+      <Filter>Source Files\backends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\liberty\liberty.cc">
+      <Filter>Source Files\frontends\liberty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\verific\verific.cc">
+      <Filter>Source Files\frontends\verific</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\verilog\verilog_frontend.cc">
+      <Filter>Source Files\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\verilog\const2ast.cc">
+      <Filter>Source Files\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\verilog\preproc.cc">
+      <Filter>Source Files\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\vhdl2verilog\vhdl2verilog.cc">
+      <Filter>Source Files\frontends\vhdl2verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\bigint\BigUnsignedInABase.cc">
+      <Filter>Source Files\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\bigint\BigInteger.cc">
+      <Filter>Source Files\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\bigint\BigIntegerAlgorithms.cc">
+      <Filter>Source Files\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\bigint\BigIntegerUtils.cc">
+      <Filter>Source Files\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\bigint\BigUnsigned.cc">
+      <Filter>Source Files\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ezsat\ezsat.cc">
+      <Filter>Source Files\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ezsat\ezminisat.cc">
+      <Filter>Source Files\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\minisat\System.cc">
+      <Filter>Source Files\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\minisat\Options.cc">
+      <Filter>Source Files\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\minisat\SimpSolver.cc">
+      <Filter>Source Files\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\minisat\Solver.cc">
+      <Filter>Source Files\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\sha1\sha1.cpp">
+      <Filter>Source Files\libs\sha1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\subcircuit\subcircuit.cc">
+      <Filter>Source Files\libs\subcircuit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\abc\blifparse.cc">
+      <Filter>Source Files\passes\abc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\abc\abc.cc">
+      <Filter>Source Files\passes\abc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\plugin.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\rename.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\scatter.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\scc.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\select.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\setattr.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\setundef.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\show.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\splice.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\splitnets.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\stat.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\tee.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\trace.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\write_file.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\add.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\connect.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\connwrappers.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\copy.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\cover.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\delete.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\design.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_recode.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_detect.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_expand.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_export.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_extract.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_info.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_map.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\fsm\fsm_opt.cc">
+      <Filter>Source Files\passes\fsm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\hierarchy\submod.cc">
+      <Filter>Source Files\passes\hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\hierarchy\hierarchy.cc">
+      <Filter>Source Files\passes\hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory_unpack.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory_collect.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory_dff.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory_map.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\memory\memory_share.cc">
+      <Filter>Source Files\passes\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\wreduce.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_clean.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_const.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_muxtree.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_reduce.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_rmdff.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\opt_share.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\opt\share.cc">
+      <Filter>Source Files\passes\opt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_rmdead.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_arst.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_clean.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_dff.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_init.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\proc\proc_mux.cc">
+      <Filter>Source Files\passes\proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\sat\miter.cc">
+      <Filter>Source Files\passes\sat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\sat\sat.cc">
+      <Filter>Source Files\passes\sat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\sat\eval.cc">
+      <Filter>Source Files\passes\sat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\sat\expose.cc">
+      <Filter>Source Files\passes\sat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\sat\freduce.cc">
+      <Filter>Source Files\passes\sat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\techmap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\alumacc.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\dfflibmap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\extract.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\hilomap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\iopadmap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\maccmap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\simplemap.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\tests\test_cell.cc">
+      <Filter>Source Files\passes\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\tests\test_abcloop.cc">
+      <Filter>Source Files\passes\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\tests\test_autotb.cc">
+      <Filter>Source Files\passes\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\cmds\logcmd.cc">
+      <Filter>Source Files\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="ilang_lexer.cc">
+      <Filter>Source Files\frontends\ilang</Filter>
+    </ClCompile>
+    <ClCompile Include="ilang_parser.tab.c">
+      <Filter>Source Files\frontends\ilang</Filter>
+    </ClCompile>
+    <ClCompile Include="verilog_lexer.cc">
+      <Filter>Source Files\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="verilog_parser.tab.c">
+      <Filter>Source Files\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\passes\techmap\libparse.cc">
+      <Filter>Source Files\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\frontends\ilang\ilang_frontend.cc">
+      <Filter>Source Files\frontends\ilang</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\kernel\bitpattern.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\celltypes.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\consteval.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\cost.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\log.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\macc.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\modtools.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\register.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\rtlil.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\satgen.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\sigtools.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\utils.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\yosys.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\ilang\ilang_backend.h">
+      <Filter>Header Files\backends\ilang</Filter>
+    </ClInclude>
+    <ClInclude Include="..\frontends\ilang\ilang_frontend.h">
+      <Filter>Header Files\frontends\ilang</Filter>
+    </ClInclude>
+    <ClInclude Include="..\frontends\verilog\verilog_frontend.h">
+      <Filter>Header Files\frontends\verilog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\NumberlikeArray.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigInteger.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigIntegerAlgorithms.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigIntegerLibrary.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigIntegerUtils.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigUnsigned.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\bigint\BigUnsignedInABase.hh">
+      <Filter>Header Files\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ezsat\ezminisat.h">
+      <Filter>Header Files\libs\ezsat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ezsat\ezsat.h">
+      <Filter>Header Files\libs\ezsat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Alg.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Alloc.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Dimacs.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Heap.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\IntMap.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\IntTypes.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Map.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Options.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\ParseUtils.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Queue.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Rnd.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\SimpSolver.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Solver.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\SolverTypes.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Sort.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\System.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\Vec.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\minisat\XAlloc.h">
+      <Filter>Header Files\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\sha1\sha1.h">
+      <Filter>Header Files\libs\sha1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\subcircuit\subcircuit.h">
+      <Filter>Header Files\libs\subcircuit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\passes\abc\blifparse.h">
+      <Filter>Header Files\passes\abc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\passes\fsm\fsmdata.h">
+      <Filter>Header Files\passes\fsm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\passes\techmap\libparse.h">
+      <Filter>Header Files\passes\techmap</Filter>
+    </ClInclude>
+    <ClInclude Include="ilang_parser.tab.h">
+      <Filter>Header Files\frontends\ilang</Filter>
+    </ClInclude>
+    <ClInclude Include="verilog_parser.tab.h">
+      <Filter>Header Files\frontends\verilog</Filter>
+    </ClInclude>
+    <ClInclude Include="getopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

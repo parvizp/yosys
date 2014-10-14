@@ -22,3 +22,7 @@
 /yosys-filterlib.html
 /kernel/version_*.cc
 /share
+/visual_studio/visual_studio.sdf
+/visual_studio/visual_studio.opensdf
+/visual_studio/visual_studio.v12.suo
+/visual_studio/Debug/
