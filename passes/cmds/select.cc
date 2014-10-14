@@ -23,6 +23,10 @@
 #include <string.h>
 #include <errno.h>
 
+#ifndef _WIN32
+	#include <fnmatch.h>
+#endif
+
 USING_YOSYS_NAMESPACE
 PRIVATE_NAMESPACE_BEGIN
 
@@ -1159,18 +1163,25 @@ struct SelectPass : public Pass {
 				if (sel->selected_whole_module(mod_it.first) && list_mode)
 					log("%s\n", id2cstr(mod_it.first));
 				if (sel->selected_module(mod_it.first)) {
-					for (auto &it : mod_it.second->wires_)
+					for (auto &it : mod_it.second->wires_) {
 						if (sel->selected_member(mod_it.first, it.first))
 							LOG_OBJECT("%s/%s\n", id2cstr(mod_it.first), id2cstr(it.first));
-					for (auto &it : mod_it.second->memories)
+					}
+
+					for (auto &it : mod_it.second->memories) {
 						if (sel->selected_member(mod_it.first, it.first))
 							LOG_OBJECT("%s/%s\n", id2cstr(mod_it.first), id2cstr(it.first));
-					for (auto &it : mod_it.second->cells_)
+					}
+
+					for (auto &it : mod_it.second->cells_) {
 						if (sel->selected_member(mod_it.first, it.first))
 							LOG_OBJECT("%s/%s\n", id2cstr(mod_it.first), id2cstr(it.first));
-					for (auto &it : mod_it.second->processes)
+					}
+
+					for (auto &it : mod_it.second->processes) {
 						if (sel->selected_member(mod_it.first, it.first))
 							LOG_OBJECT("%s/%s\n", id2cstr(mod_it.first), id2cstr(it.first));
+					}
 				}
 			}
 			if (count_mode)
@@ -1226,18 +1237,25 @@ struct SelectPass : public Pass {
 			sel->optimize(design);
 			for (auto mod_it : design->modules_)
 				if (sel->selected_module(mod_it.first)) {
-					for (auto &it : mod_it.second->wires_)
+					for (auto &it : mod_it.second->wires_) {
 						if (sel->selected_member(mod_it.first, it.first))
 							total_count++;
-					for (auto &it : mod_it.second->memories)
+					}
+
+					for (auto &it : mod_it.second->memories) {
 						if (sel->selected_member(mod_it.first, it.first))
 							total_count++;
-					for (auto &it : mod_it.second->cells_)
+					}
+
+					for (auto &it : mod_it.second->cells_) {
 						if (sel->selected_member(mod_it.first, it.first))
 							total_count++;
-					for (auto &it : mod_it.second->processes)
+					}
+
+					for (auto &it : mod_it.second->processes) {
 						if (sel->selected_member(mod_it.first, it.first))
 							total_count++;
+					}
 				}
 			if (assert_count != total_count)
 				log_error("Assertation failed: selection contains %d elements instead of the asserted %d:%s\n",
@@ -1258,12 +1276,17 @@ struct SelectPass : public Pass {
 			RTLIL::Selection &sel = design->selection_stack.back();
 			if (sel.full_selection)
 				log("*\n");
+
 			for (auto &it : sel.selected_modules)
 				log("%s\n", id2cstr(it));
-			for (auto &it : sel.selected_members)
-				for (auto &it2 : it.second)
+			
+			for (auto &it : sel.selected_members) {
+				for (auto &it2 : it.second) {
 					log("%s/%s\n", id2cstr(it.first), id2cstr(it2));
-			return;
+				}
+			}
+			
+				return;
 		}
 
 		design->selection_stack.back() = work_stack.back();

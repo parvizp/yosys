@@ -26,7 +26,11 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "passes/techmap/techmap.inc"
+#ifdef _WIN32
+	#include "visual_studio/techmap.inc"
+#else
+	#include "passes/techmap/techmap.inc"
+#endif
 
 YOSYS_NAMESPACE_BEGIN
 

@@ -20,6 +20,8 @@
 #ifndef EZSAT_H
 #define EZSAT_H
 
+#include "kernel/yosys.h"
+
 #include <set>
 #include <map>
 #include <vector>

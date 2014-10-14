@@ -27,10 +27,16 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
-#include <libgen.h>
 #include <limits.h>
 #include <errno.h>
+
+#ifndef _WIN32
+	#include <unistd.h>
+	#include <libgen.h>
+#else
+	#include "visual_studio/getopt.h"
+#endif
+
 
 USING_YOSYS_NAMESPACE
 
