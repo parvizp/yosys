@@ -466,6 +466,9 @@ RTLIL::Module::~Module()
 RTLIL::IdString RTLIL::Module::derive(RTLIL::Design*, std::map<RTLIL::IdString, RTLIL::Const>)
 {
 	log_error("Module `%s' is used with parameters but is not parametric!\n", id2cstr(name));
+
+	//BUGBUG: no return
+	return RTLIL::IdString();
 }
 
 size_t RTLIL::Module::count_id(RTLIL::IdString id)
@@ -938,8 +941,11 @@ void RTLIL::Module::check()
 		log_assert(!it.first.empty());
 		log_assert(it.second->width >= 0);
 		log_assert(it.second->port_id >= 0);
-		for (auto &it2 : it.second->attributes)
+		
+		for (auto &it2 : it.second->attributes) {
 			log_assert(!it2.first.empty());
+		}
+
 		if (it.second->port_id) {
 			log_assert(GetSize(ports) >= it.second->port_id);
 			log_assert(ports.at(it.second->port_id-1) == it.first);
@@ -951,8 +957,10 @@ void RTLIL::Module::check()
 		} else
 			log_assert(!it.second->port_input && !it.second->port_output);
 	}
-	for (auto port_declared : ports_declared)
+	for (auto port_declared : ports_declared) {
 		log_assert(port_declared == true);
+	}
+
 	log_assert(GetSize(ports) == GetSize(ports_declared));
 
 	for (auto &it : memories) {
@@ -960,8 +968,9 @@ void RTLIL::Module::check()
 		log_assert(!it.first.empty());
 		log_assert(it.second->width >= 0);
 		log_assert(it.second->size >= 0);
-		for (auto &it2 : it.second->attributes)
+		for (auto &it2 : it.second->attributes) {
 			log_assert(!it2.first.empty());
+		}
 	}
 
 	for (auto &it : cells_) {
@@ -973,10 +982,12 @@ void RTLIL::Module::check()
 			log_assert(!it2.first.empty());
 			it2.second.check();
 		}
-		for (auto &it2 : it.second->attributes)
+		for (auto &it2 : it.second->attributes) {
 			log_assert(!it2.first.empty());
-		for (auto &it2 : it.second->parameters)
+		}
+		for (auto &it2 : it.second->parameters) {
 			log_assert(!it2.first.empty());
+		}
 		InternalCellChecker checker(this, it.second);
 		checker.check();
 	}
@@ -993,8 +1004,9 @@ void RTLIL::Module::check()
 		it.second.check();
 	}
 
-	for (auto &it : attributes)
+	for (auto &it : attributes) {
 		log_assert(!it.first.empty());
+	}
 #endif
 }
 
@@ -1010,17 +1022,21 @@ void RTLIL::Module::cloneInto(RTLIL::Module *new_mod) const
 	new_mod->connections_ = connections_;
 	new_mod->attributes = attributes;
 
-	for (auto &it : wires_)
+	for (auto &it : wires_) {
 		new_mod->addWire(it.first, it.second);
+	}
 
-	for (auto &it : memories)
+	for (auto &it : memories) {
 		new_mod->memories[it.first] = new RTLIL::Memory(*it.second);
+	}
 
-	for (auto &it : cells_)
+	for (auto &it : cells_) {
 		new_mod->addCell(it.first, it.second);
+	}
 
-	for (auto &it : processes)
+	for (auto &it : processes) {
 		new_mod->processes[it.first] = it.second->clone();
+	}
 
 	struct RewriteSigSpecWorker
 	{
@@ -1028,9 +1044,10 @@ void RTLIL::Module::cloneInto(RTLIL::Module *new_mod) const
 		void operator()(RTLIL::SigSpec &sig)
 		{
 			std::vector<RTLIL::SigChunk> chunks = sig.chunks();
-			for (auto &c : chunks)
+			for (auto &c : chunks) {
 				if (c.wire != NULL)
 					c.wire = mod->wires_.at(c.wire->name);
+			}
 			sig = chunks;
 		}
 	};
@@ -1156,8 +1173,9 @@ void RTLIL::Module::remove(const std::set<RTLIL::Wire*> &wires)
 
 void RTLIL::Module::remove(RTLIL::Cell *cell)
 {
-	while (!cell->connections_.empty())
+	while (!cell->connections_.empty()) {
 		cell->unsetPort(cell->connections_.begin()->first);
+	}
 
 	log_assert(cells_.count(cell->name) != 0);
 	log_assert(refcount_cells_ == 0);
@@ -1759,9 +1777,11 @@ void RTLIL::Cell::setPort(RTLIL::IdString portname, RTLIL::SigSpec signal)
 	for (auto mon : module->monitors)
 		mon->notify_connect(this, conn_it->first, conn_it->second, signal);
 
-	if (module->design)
-		for (auto mon : module->design->monitors)
+	if (module->design) {
+		for (auto mon : module->design->monitors) {
 			mon->notify_connect(this, conn_it->first, conn_it->second, signal);
+		}
+	}
 
 	conn_it->second = signal;
 }
@@ -1778,7 +1798,7 @@ const std::map<RTLIL::IdString, RTLIL::SigSpec> &RTLIL::Cell::connections() cons
 
 bool RTLIL::Cell::hasParam(RTLIL::IdString paramname) const
 {
-	return parameters.count(paramname);
+	return parameters.count(paramname) != 0;
 }
 
 void RTLIL::Cell::unsetParam(RTLIL::IdString paramname)
@@ -2217,15 +2237,18 @@ void RTLIL::SigSpec::hash() const
 	that->pack();
 
 	that->hash_ = 5381;
-	for (auto &c : that->chunks_)
+	for (auto &c : that->chunks_) {
 		if (c.wire == NULL) {
-			for (auto &v : c.data)
+			for (auto &v : c.data) {
 				DJB2(that->hash_, v);
-		} else {
+			}
+		}
+		else {
 			DJB2(that->hash_, c.wire->name.index_);
 			DJB2(that->hash_, c.offset);
 			DJB2(that->hash_, c.width);
 		}
+	}
 
 	if (that->hash_ == 0)
 		that->hash_ = 1;
@@ -2898,10 +2921,14 @@ RTLIL::SigBit RTLIL::SigSpec::to_single_sigbit() const
 
 	pack();
 	log_assert(width_ == 1);
-	for (auto &c : chunks_)
+	for (auto &c : chunks_) {
 		if (c.width)
 			return RTLIL::SigBit(c);
+	}
 	log_abort();
+
+	// BUGBUG: no return
+	return RTLIL::SigBit();
 }
 
 static void sigspec_parse_split(std::vector<std::string> &tokens, const std::string &text, char sep)
